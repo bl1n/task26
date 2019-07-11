@@ -4,6 +4,7 @@ import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         final float dp = getResources().getDisplayMetrics().density;
-        final float sp = getResources().getDisplayMetrics().scaledDensity/2;
+        final float sp = getResources().getDisplayMetrics().scaledDensity;
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
 
@@ -36,16 +37,14 @@ public class MainActivity extends AppCompatActivity {
             RelativeLayout relativeLayout = new RelativeLayout(this);
             RelativeLayout.LayoutParams relParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-            relativeLayout.setLayoutParams(relParams);
-            root.addView(relativeLayout);
+            root.addView(relativeLayout,relParams );
 
             ImageView ivIcon = new ImageView(this);
             ivIcon.setId(11);
             ivIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
             ivIcon.setImageResource(R.mipmap.ic_launcher);
             ViewGroup.LayoutParams linParams = new ViewGroup.LayoutParams(192*(int)dp,128*(int)dp);
-            ivIcon.setLayoutParams(linParams);
-            relativeLayout.addView(ivIcon);
+            relativeLayout.addView(ivIcon, linParams);
 
 
             TextView tvTitle = new TextView(this);
@@ -59,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
             tvTitleParams.addRule(RelativeLayout.ALIGN_TOP, ivIcon.getId());
             tvTitleParams.addRule(RelativeLayout.END_OF, ivIcon.getId());
             tvTitleParams.addRule(RelativeLayout.RIGHT_OF, ivIcon.getId());
-            tvTitle.setLayoutParams(tvTitleParams);
-            relativeLayout.addView(tvTitle);
+            relativeLayout.addView(tvTitle,tvTitleParams );
 
 
 
@@ -74,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
             tvQuoteParams.addRule(RelativeLayout.ALIGN_START, tvTitle.getId());
             tvQuoteParams.addRule(RelativeLayout.BELOW, tvTitle.getId());
             tvQuoteParams.setMargins(0, 8 * (int)dp, 0, 0);
-            tvQuote.setLayoutParams(tvQuoteParams);
-            relativeLayout.addView(tvQuote);
+            relativeLayout.addView(tvQuote, tvQuoteParams);
 
             EditText etComment = new EditText(this);
+            etComment.setInputType(InputType.TYPE_CLASS_TEXT);
             etComment.setId(111);
             RelativeLayout.LayoutParams etCommentParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             etCommentParams.setMargins(0, 8 * (int)dp, 0, 0);
