@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">task26</string>
+    <string name="elafonisy_beach">Пляж Элафониси</string>
+    <string name="description">Розовый песок, небольшая глубина моря, спокойная и тёплая вода - великолепный пляж Элафониси на острове Крит.</string>
+    <string name="etcomment">Write your comment</string>
+    <string name="btn_previous">Previous</string>
+    <string name="btn_next">Next</string>
 </resources>
