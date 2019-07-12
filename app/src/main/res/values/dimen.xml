@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ivHeight">192dp</dimen>
+    <dimen name="ivWeight">128dp</dimen>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="tvTittleSizeInSp">28sp</dimen>
+    <dimen name="tvQuote">14sp</dimen>
+</resources>
